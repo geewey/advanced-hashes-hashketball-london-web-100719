@@ -260,5 +260,3 @@ def winning_team
   team_points_array = team_most_points.sort_by { |team, points| -points}
   team_points_array[0][0]
 end
-
-winning_team
