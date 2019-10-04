@@ -260,3 +260,23 @@ def winning_team
   team_points_array = team_most_points.sort_by { |team, points| -points}
   team_points_array[0][0]
 end
+
+def player_with_longest_name
+  most_chars = 0
+  player_name = Hash.new
+  
+   game_hash.each do |location, team_data|
+    team_data[:players].each do |stats|
+      stats.each do |attribute, value| # inside players hashes
+        if attribute == :player_name && value.length > most_chars
+          most_points = value
+          player_name[:player_name] = stats[:player_name]
+        end
+      end
+    end
+  end
+  player_name[:player_name]
+  binding.pry
+end
+
+player_with_longest_name
