@@ -257,9 +257,8 @@ def winning_team
     end
   end
   
-  team_most_points.sort_by { |k, v| -v}
-    top_team = team_most_points
-  end
+  team_points_array = team_most_points.sort_by { |k, v| -v}
+  team_points_array[0][1]
   
   binding.pry
 end
