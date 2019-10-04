@@ -256,7 +256,7 @@ def winning_team
       end
     end
   end
-  team_most_points.sort_by { |team, points| points}
+  team_most_points.sort_by { |team, points| points }
   team_most_points[-1][1]
 end
 
