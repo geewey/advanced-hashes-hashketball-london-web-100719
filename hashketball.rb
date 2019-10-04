@@ -280,9 +280,10 @@ def player_with_longest_name
 end
 
 def long_name_steals_a_ton?
-  most_steals = 0
   most_chars = 0
+  most_steals = 0
   player_name = Hash.new
+  player_steals = Hash.new
   
    game_hash.each do |location, team_data|
     team_data[:players].each do |stats|
@@ -291,9 +292,14 @@ def long_name_steals_a_ton?
           most_chars = value.length
           player_name[:player_name] = stats[:player_name]
           player_name[:name_length] = value.length
+          player_name[:steals] = stats[:steals]
         end
+        if attribute == :steals && value > most_steals
+          most_steals = value
+          player_steals[:player_name] = stats[:player_name]
+          player_steals[:steals] = stats[:steals]
       end
     end
   end
-  player_name[:player_name]
+  return player_name[:player_name] == player_steals[:player_name]
 end
