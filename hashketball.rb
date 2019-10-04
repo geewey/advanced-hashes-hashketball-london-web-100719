@@ -277,7 +277,4 @@ def player_with_longest_name
     end
   end
   player_name[:player_name]
-  binding.pry
 end
-
-player_with_longest_name
