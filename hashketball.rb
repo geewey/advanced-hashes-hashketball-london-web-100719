@@ -257,9 +257,11 @@ def winning_team
     end
   end
   
-  team_most_points.sort_by do |team, points|
-    -points
+  team_most_points.sort_by |team, points|
+    points
+    top_team = team_most_points
   end
+  
   binding.pry
 end
 
