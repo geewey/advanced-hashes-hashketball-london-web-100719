@@ -278,3 +278,22 @@ def player_with_longest_name
   end
   player_name[:player_name]
 end
+
+def long_name_steals_a_ton?
+  most_steals = 0
+  most_chars = 0
+  player_name = Hash.new
+  
+   game_hash.each do |location, team_data|
+    team_data[:players].each do |stats|
+      stats.each do |attribute, value| # inside players hashes
+        if attribute == :player_name && value.length > most_chars
+          most_chars = value.length
+          player_name[:player_name] = stats[:player_name]
+          player_name[:name_length] = value.length
+        end
+      end
+    end
+  end
+  player_name[:player_name]
+end
