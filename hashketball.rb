@@ -269,9 +269,9 @@ def player_with_longest_name
     team_data[:players].each do |stats|
       stats.each do |attribute, value| # inside players hashes
         if attribute == :player_name && value.length > most_chars
-          most_chars = value
-          player_name[:player_name] = stats[:player_name]
-          player_name[:name_length] = value.length
+          # most_chars = value
+          # player_name[:player_name] = stats[:player_name]
+          # player_name[:name_length] = value.length
         end
       end
     end
