@@ -298,6 +298,7 @@ def long_name_steals_a_ton?
           most_steals = value
           player_steals[:player_name] = stats[:player_name]
           player_steals[:steals] = stats[:steals]
+        end
       end
     end
   end
