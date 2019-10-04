@@ -256,10 +256,7 @@ def winning_team
       end
     end
   end
-  team_most_points.sort
+  team_most_points
 
-  # team_most_points
   binding.pry
 end
-
-winning_team
