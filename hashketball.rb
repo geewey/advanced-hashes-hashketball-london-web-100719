@@ -256,7 +256,7 @@ def winning_team
       end
     end
   end
-  team_most_points.sort
+  team_most_points.sort_by
 end
 
 winning_team
